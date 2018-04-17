@@ -35,14 +35,14 @@ class Song
       a.name<=>b.name
     }
   end
-  
+
   def self.new_from_filename(str)
     comp = str.split('-')
     song = self.create_by_name(comp[1].strip.scan(/\b.*[^.mp3 .mp4 .aac]/)[0])
     song.artist_name = comp[0].strip
     song
   end
-  
+
   def self.all
     @@all
   end
